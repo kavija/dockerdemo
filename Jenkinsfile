@@ -13,6 +13,7 @@ pipeline{
 				bat "mvn clean install"
 				
 				bat "docker build -t kavija/hellodocker:latest ."
+				echo "804f5e93-a31e-4a4d-a757-9d4dbe9590ad" | docker login -u kavija --password-stdin
 			}
 		}
 		stage('Test'){
