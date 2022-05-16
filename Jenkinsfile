@@ -11,6 +11,8 @@ pipeline{
 			steps{
 				echo "Build the project"
 				bat "mvn clean install"
+				
+				bat "docker build -t kavija/hellodocker:latest ."
 			}
 		}
 		stage('Test'){
