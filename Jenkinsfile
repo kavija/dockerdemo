@@ -14,6 +14,8 @@ pipeline{
 				
 				sh "docker build -t kavija/hellodocker:latest ."
 				sh "echo '804f5e93-a31e-4a4d-a757-9d4dbe9590ad' | docker login -u kavija --password-stdin"
+				sh 'docker push kavija/hellodocker:latest'
+				sh 'docker logout'
 			}
 		}
 		stage('Test'){
