@@ -10,10 +10,10 @@ pipeline{
 		stage('Build'){
 			steps{
 				echo "Build the project"
-				bat "mvn clean install"
+				sh "mvn clean install"
 				
-				bat "docker build -t kavija/hellodocker:latest ."
-				bat "echo '804f5e93-a31e-4a4d-a757-9d4dbe9590ad' | docker login -u kavija --password-stdin"
+				sh "docker build -t kavija/hellodocker:latest ."
+				sh "echo '804f5e93-a31e-4a4d-a757-9d4dbe9590ad' | docker login -u kavija --password-stdin"
 			}
 		}
 		stage('Test'){
